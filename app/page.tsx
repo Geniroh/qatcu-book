@@ -1,101 +1,134 @@
+"use client";
 import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
+import { useRouter } from "next/navigation";
 
-export default function Home() {
+export default function Page() {
+  const router = useRouter();
+
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="min-h-screen bg-[#f5f5f0]">
+      <section className="relative bg-[#2A8B84] lg:rounded-bl-3xl lg:overflow-hidden">
+        <div className="container px-4 py-24 max-w-[1200px] mx-auto">
+          <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-3 lg:gap-8 items-center">
+            <div className="space-y-8 lg:col-span-2">
+              <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl xl:text-7xl/none text-white">
+                Quality and Total Child Upbringing
+              </h1>
+              <p className="max-w-[600px] text-zinc-100 md:text-xl">
+                A comprehensive guide to raising well-rounded, disciplined
+                children who can become blessings to their family, nation, and
+                the world at large.
+              </p>
+              <div className="space-x-4">
+                <Button
+                  className="bg-[#ff9900] hover:bg-zinc-100 hover:text-[#2A8B84]/90"
+                  size={"lg"}
+                  onClick={() => router.push("/get-the-book")}
+                >
+                  Get the Book
+                </Button>
+              </div>
+            </div>
+            <div className="relative aspect-square">
+              <Image
+                src="/book-cover.jpg"
+                alt="Book Cover"
+                className="object-contain max-h-[500px]"
+                fill
+                priority
+              />
+            </div>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        <div className="absolute inset-x-0 bottom-0 h-16 bg-[#2A8B84]/10 backdrop-blur-lg" />
+      </section>
+
+      <section className="py-24 bg-white">
+        <div className="container px-4 mx-auto">
+          <h2 className="text-3xl font-bold tracking-tighter text-center mb-12 sm:text-4xl">
+            Core Principles of Child Upbringing
+          </h2>
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            <Card className="p-6 space-y-4">
+              <h3 className="text-xl font-bold">Physical Health</h3>
+              <p className="text-muted-foreground">
+                Ensuring children maintain good physical health through proper
+                nutrition and exercise.
+              </p>
+            </Card>
+            <Card className="p-6 space-y-4">
+              <h3 className="text-xl font-bold">Spiritual Nurture</h3>
+              <p className="text-muted-foreground">
+                Developing strong moral and spiritual foundations in children.
+              </p>
+            </Card>
+            <Card className="p-6 space-y-4">
+              <h3 className="text-xl font-bold">Mental Balance</h3>
+              <p className="text-muted-foreground">
+                Fostering intellectual growth and emotional intelligence.
+              </p>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-24 bg-[#2A8B84]/10">
+        <div className="container px-4 max-w-[1200px] mx-auto">
+          <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-3 items-center">
+            <div className="space-y-6 lg:col-span-2">
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">
+                About the Author
+              </h2>
+              <p className="text-muted-foreground">
+                An evangelist and minister of the gospel, dedicated to impacting
+                the lives of teenagers and children. With a background in
+                Chemical Engineering and years of experience in youth ministry,
+                she brings a unique perspective to child upbringing.
+              </p>
+              <Button
+                className="bg-[#2A8B84] hover:bg-[#2A8B84]/90"
+                size="lg"
+                onClick={() => router.push("/author")}
+              >
+                Read More
+              </Button>
+            </div>
+            <div>
+              <div className="relative aspect-video">
+                <Image
+                  src="/author.jpg"
+                  alt="Angelina"
+                  className="rounded-lg object-contain"
+                  fill
+                />
+              </div>
+              <div className="text-center">ANGELINA ODINMA UNEZE</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-24 bg-[#2A8B84]">
+        <div className="container px-4 mx-auto text-center">
+          <div className="max-w-2xl mx-auto space-y-8">
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl text-white">
+              Start Your Journey to Better Parenting Today
+            </h2>
+            <p className="text-zinc-100">
+              Discover the art of raising well-rounded children through
+              conscious and intentional effort.
+            </p>
+            <Button
+              size="lg"
+              className="bg-white text-[#2A8B84] hover:bg-zinc-100"
+            >
+              Purchase the Book
+            </Button>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
